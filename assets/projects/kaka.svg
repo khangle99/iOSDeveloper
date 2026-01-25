@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 812">
+  <rect width="375" height="812" fill="#2d333b" />
+  <polygon points="187.5,100 230,220 350,220 250,300 290,420 187.5,350 85,420 125,300 25,220 145,220" fill="#a371f7" opacity="0.5"/>
+  <text x="187.5" y="500" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#f0f6fc" text-anchor="middle">Kaka</text>
+  <text x="187.5" y="550" font-family="Arial, sans-serif" font-size="20" fill="#a371f7" text-anchor="middle">Social Karaoke</text>
+</svg>

@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Toggle generic mobile class or style
             // ideally we would add an 'active' class
             const isFlex = navLinks.style.display === 'flex';
-            
+
             if (isFlex) {
                 navLinks.style.display = '';
                 navLinks.classList.remove('active');
@@ -58,6 +58,116 @@ document.addEventListener('DOMContentLoaded', () => {
         section.classList.add('fade-in-section');
         observer.observe(section);
     });
+
+    // Carousel Logic
+    const track = document.querySelector('.carousel-track');
+    const cards = document.querySelectorAll('.project-card');
+    const nextBtn = document.querySelector('.nav-btn.next');
+    const prevBtn = document.querySelector('.nav-btn.prev');
+    const dotsContainer = document.querySelector('.carousel-dots');
+
+    if (track && cards.length > 0) {
+        let currentIndex = 0;
+        const totalCards = cards.length;
+        let autoScrollInterval;
+
+        // Create Dots
+        cards.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                scrollToIndex(index);
+                resetAutoScroll();
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        const updateDots = (index) => {
+            dots.forEach(d => d.classList.remove('active'));
+            dots[index].classList.add('active');
+        };
+
+        const scrollToIndex = (index) => {
+            if (index < 0) index = totalCards - 1;
+            if (index >= totalCards) index = 0;
+
+            currentIndex = index;
+            const cardWidth = cards[0].offsetWidth + 32; // width + gap (approx 2rem = 32px)
+            // Or better, just scroll to the offsetLeft of the target card
+
+            // To be robust with resize, let's use scrollIntoView behavior? 
+            // Better yet, calculate offset.
+
+            // Actually, we set scroll-snap-type on track, so simple scroll logic:
+            track.scrollTo({
+                left: cards[index].offsetLeft - track.offsetLeft, // adjust relative to track
+                behavior: 'smooth'
+            });
+
+            updateDots(currentIndex);
+        };
+
+        const nextSlide = () => {
+            scrollToIndex(currentIndex + 1);
+        };
+
+        const prevSlide = () => {
+            scrollToIndex(currentIndex - 1);
+        };
+
+        // Event Listeners
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoScroll();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoScroll();
+        });
+
+        // Auto Scroll
+        const startAutoScroll = () => {
+            autoScrollInterval = setInterval(() => {
+                nextSlide();
+            }, 5000); // 5 seconds
+        };
+
+        const stopAutoScroll = () => {
+            clearInterval(autoScrollInterval);
+        };
+
+        const resetAutoScroll = () => {
+            stopAutoScroll();
+            startAutoScroll();
+        };
+
+        track.addEventListener('mouseenter', stopAutoScroll);
+        track.addEventListener('mouseleave', startAutoScroll);
+
+        // Handle manual scroll (touch/trackpad) updating dots
+        // Use IntersectionObserver to update dots on scroll
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Find which card this is
+                    const index = Array.from(cards).indexOf(entry.target);
+                    if (index !== -1) {
+                        currentIndex = index;
+                        updateDots(currentIndex);
+                    }
+                }
+            });
+        }, { threshold: 0.6, root: track }); // 60% visibility in track
+
+        cards.forEach(card => scrollObserver.observe(card));
+
+        // Initial Start
+        startAutoScroll();
+    }
 });
 
 // Add dynamic CSS for animations

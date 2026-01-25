@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 812">
+  <rect width="375" height="812" fill="#2d333b" />
+  <rect x="20" y="60" width="335" height="200" rx="10" fill="#58a6ff" opacity="0.2"/>
+  <circle cx="187.5" cy="160" r="50" fill="#58a6ff"/>
+  <text x="187.5" y="400" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#f0f6fc" text-anchor="middle">Shimauma Print</text>
+  <rect x="40" y="450" width="295" height="20" rx="5" fill="#8b949e" opacity="0.3"/>
+  <rect x="40" y="490" width="295" height="20" rx="5" fill="#8b949e" opacity="0.3"/>
+  <rect x="40" y="530" width="200" height="20" rx="5" fill="#8b949e" opacity="0.3"/>
+</svg>
