@@ -325,6 +325,22 @@ ul {
     margin-bottom: 1rem;
     flex-wrap: wrap;
     gap: 1rem;
+    width: 100%;
+}
+
+.project-title-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.project-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: #fff;
+    padding: 2px;
 }
 
 .project-header h3 {
