@@ -8,10 +8,10 @@
     --accent-glow: rgba(88, 166, 255, 0.2);
     --border: #30363d;
     --gradient-1: linear-gradient(135deg, #1f6feb 0%, #58a6ff 100%);
-    
+
     /* Spacing */
     --section-padding: 6rem 0;
-    
+
     /* Fonts */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
@@ -130,7 +130,8 @@ ul {
     color: var(--text-secondary);
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--accent);
 }
 
@@ -367,9 +368,26 @@ ul {
     border-color: var(--accent);
 }
 
-.timeline-content h3 {
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.company-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: white;
+    /* Logos usually look better on white */
+    padding: 4px;
+}
+
+.company-header h3 {
     font-size: 1.3rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0;
 }
 
 .timeline-content h4 {
@@ -546,31 +564,31 @@ ul {
         text-align: center;
         gap: 3rem;
     }
-    
+
     .hero-text h1 {
         font-size: 3rem;
     }
-    
+
     .hero-text p {
         margin: 0 auto 2.5rem;
     }
-    
+
     .hero-btns {
         justify-content: center;
     }
-    
+
     .social-links {
         justify-content: center;
     }
-    
+
     .timeline::before {
         left: 20px;
     }
-    
+
     .timeline-item {
         padding-left: 3.5rem;
     }
-    
+
     .timeline-dot {
         left: 14px;
     }
@@ -578,13 +596,14 @@ ul {
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Mobile menu logic to be added if needed, or keeping simple */
+        display: none;
+        /* Mobile menu logic to be added if needed, or keeping simple */
     }
-    
+
     .mobile-menu-btn {
         display: block;
     }
-    
+
     .stats-grid {
         grid-template-columns: 1fr;
     }
