@@ -77,29 +77,8 @@
     <section id="about" class="section about-section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-card">
-                    <h3>Professional Summary</h3>
-                    <p>iOS Developer passionate about building high-performance native apps using Swift. Experienced in
-                        developing scalable, maintainable code with clean architecture. Proficient in media-heavy apps
-                        (photo, video, audio, livestream, VoIP), with strong attention to performance, UX, and code
-                        quality. Always balancing engineering best practices with time constraints to deliver fast,
-                        stable products.</p>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">4+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Key Projects</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">815</span>
-                        <span class="stat-label">TOEIC Score</span>
-                    </div>
-                </div>
+            <div id="about-content" class="about-content">
+                <!-- Loaded dynamically -->
             </div>
         </div>
     </section>
@@ -124,139 +103,8 @@
         </div>
         <div class="container">
             <h2 class="section-title">Work Experience</h2>
-            <div class="timeline">
-
-                <!-- TymeX -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Jan 2026 – Present</div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <img src="assets/logos/tyme.svg" alt="TymeX Logo" class="company-logo">
-                            <h3>iOS Developer</h3>
-                        </div>
-                        <h4>TymeX, Ho Chi Minh City, Vietnam (English)</h4>
-                        <ul>
-                            <li>Built and maintained the Tyme Bank mobile application, with a focus on Home UI,
-                                notification features, and onboarding flows.</li>
-                            <li>Applied stream-based programming using RxSwift and functional programming principles,
-                                along with unit testing, to ensure performance and code quality.</li>
-                            <li>Improved code quality by enforcing coding standards with SwiftLint and continuous code
-                                analysis using SonarQube.</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span>Unit Testing</span><span>MVVM</span><span>RxSwift</span><span>UIKit</span><span>Cloud
-                                Keychain</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- WiFiesta -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Jan 2025 – Dec 2025</div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <img src="assets/logos/wifiesta.svg" alt="Wifiesta Logo" class="company-logo">
-                            <h3>iOS Developer</h3>
-                        </div>
-                        <h4>WiFiesta, Remote (English)</h4>
-                        <ul>
-                            <li>Responsible for the full development lifecycle of the iOS app — from project setup,
-                                architecture design, and feature implementation to build automation, TestFlight
-                                distribution, and release coordination.</li>
-                            <li>Improved user experience and app responsiveness through lazy loading, skeleton views,
-                                and optimized performance using caching and multi-threading.</li>
-                            <li>Leveraged analytics and attribution SDKs to improve app reliability, gain user insights,
-                                and measure the effectiveness of marketing campaigns.</li>
-                            <li>Modernized backend service codebase with Swift Concurrency for safer, more efficient
-                                multithreading.</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span>Unit Testing</span><span>Swift
-                                Concurrency</span><span>VIPER</span><span>FirebaseSDK</span><span>FacebookSDK</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FPT Telecom -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Jan 2023 – Dec 2024</div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <img src="assets/logos/fpt.svg" alt="FPT Telecom Logo" class="company-logo">
-                            <h3>iOS Developer (Middle)</h3>
-                        </div>
-                        <h4>FPT Telecom, Ho Chi Minh City, Vietnam (Vietnamese)</h4>
-                        <ul>
-                            <li>Led the development of Messaging and Video Calling features (using WebRTC and XMPP),
-                                enabling real-time communication between customers and technical staff.</li>
-                            <li>Improved CI/CD pipelines to ensure faster and more reliable app distribution.</li>
-                            <li>Enhanced team productivity by streamlining code with Swift macros and enforcing
-                                standards using SwiftLint.</li>
-                            <li>Integrated SwiftUI into the project to accelerate development, improve prototyping
-                                speed, and simplify UI implementation.</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span>WebRTC</span><span>XMPP</span><span>Socket IO</span><span>Clean
-                                Architecture</span><span>SwiftUI</span><span>RealmSwift</span><span>Fastlane</span><span>GitLab
-                                Runner</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- VNG Corporation -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Sep 2022 – Dec 2022</div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <img src="assets/logos/vng.svg" alt="VNG Corporation Logo" class="company-logo">
-                            <h3>iOS Developer (Junior)</h3>
-                        </div>
-                        <h4>VNG Corporation (Zalo), Ho Chi Minh City, Vietnam (Vietnamese)</h4>
-                        <ul>
-                            <li>Led the implementation of AI-driven video filters in the livestreaming module, resulting
-                                in higher user retention during karaoke streams.</li>
-                            <li>Enhanced the karaoke experience with real-time audio effects like reverb and noise
-                                reduction, improving sound quality and user satisfaction.</li>
-                            <li>Implemented an intuitive in-app screenshot capture and editing experience with external
-                                app sharing support.</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span>HashinKit</span><span>AudioKit</span><span>GPUImage</span><span>FirebaseSDK</span><span>Core
-                                Image</span><span>SQLite</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gumi Viet Nam -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Aug 2021 – Aug 2022</div>
-                    <div class="timeline-content">
-                        <div class="company-header">
-                            <img src="assets/logos/gumi.svg" alt="Gumi Viet Nam Logo" class="company-logo">
-                            <h3>iOS Developer (Fresher)</h3>
-                        </div>
-                        <h4>Gumi Viet Nam, Ho Chi Minh City, Vietnam (Vietnamese)</h4>
-                        <ul>
-                            <li>Improved user experience by implementing new features and fixing performance issues for
-                                3 photo printing applications.</li>
-                            <li>Optimized multithreading to enhance performance and resolved key UI bugs, leading to
-                                more seamless photo selection and editing functionalities.</li>
-                            <li>Leveraged analytics platforms to monitor app stability and proactively resolve crashes.
-                            </li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span>RxSwift</span><span>PhotoKit</span><span>Appsflyer</span><span>Realm</span><span>GCD</span><span>Core
-                                Graphic</span>
-                        </div>
-                    </div>
-                </div>
-
-
+            <div id="experience-timeline" class="timeline">
+                <!-- Loaded dynamically -->
             </div>
         </div>
     </section>
@@ -265,53 +113,8 @@
     <section id="skills" class="section skills-section">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag filled">Swift</span>
-                        <span class="skill-tag filled">Objective-C</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Frameworks</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">UIKit</span>
-                        <span class="skill-tag">SwiftUI</span>
-                        <span class="skill-tag">RxSwift</span>
-                        <span class="skill-tag">AudioKit</span>
-                        <span class="skill-tag">WebRTC</span>
-                        <span class="skill-tag">XMPP</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & SDKs</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Firebase</span>
-                        <span class="skill-tag">Fastlane</span>
-                        <span class="skill-tag">GitLab Runner</span>
-                        <span class="skill-tag">Appsflyer</span>
-                        <span class="skill-tag">Realm</span>
-                        <span class="skill-tag">SQLite</span>
-                        <span class="skill-tag">Core Image</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Concepts</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Clean Architecture</span>
-                        <span class="skill-tag">TDD</span>
-                        <span class="skill-tag">CI/CD</span>
-                        <span class="skill-tag">RESTful API</span>
-                        <span class="skill-tag">VoIP</span>
-                        <span class="skill-tag">Multimedia Processing</span>
-                        <span class="skill-tag">Deferred Deep Linking</span>
-                        <span class="skill-tag">SOLID</span>
-                        <span class="skill-tag">YAGNI</span>
-                        <span class="skill-tag">OOP</span>
-                        <span class="skill-tag">POP</span>
-                    </div>
-                </div>
+            <div id="skills-grid" class="skills-grid">
+                <!-- Loaded dynamically -->
             </div>
         </div>
     </section>
@@ -320,22 +123,8 @@
     <section id="education" class="section education-section">
         <div class="container">
             <h2 class="section-title">Education & Certifications</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <i class="fas fa-graduation-cap edu-icon"></i>
-                    <div class="edu-details">
-                        <h3>Bachelor of Engineering in Software Engineering</h3>
-                        <h4>Posts and Telecommunications Institute of Technology (PTIT)</h4>
-                        <p class="edu-year">Graduated: 2022</p>
-                    </div>
-                </div>
-                <div class="education-card">
-                    <i class="fas fa-certificate edu-icon"></i>
-                    <div class="edu-details">
-                        <h3>TOEIC 815</h3>
-                        <h4>(2023-2025)</h4>
-                    </div>
-                </div>
+            <div id="education-grid" class="education-grid">
+                <!-- Loaded dynamically -->
             </div>
         </div>
     </section>
@@ -345,20 +134,8 @@
         <div class="container">
             <div class="contact-box">
                 <h2 class="section-title">Let's Work Together</h2>
-                <p>Feel free to reach out for collaborations or just a friendly hello.</p>
-                <div class="contact-info">
-                    <a href="mailto:dev.khangle@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>dev.khangle@gmail.com</span>
-                    </a>
-                    <a href="tel:+84936998493" class="contact-link">
-                        <i class="fas fa-phone"></i>
-                        <span>+84 936 998 493</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/khangle2299" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i>
-                        <span>linkedin.com/in/khangle2299</span>
-                    </a>
+                <div id="contact-content">
+                    <!-- Loaded dynamically -->
                 </div>
             </div>
         </div>
@@ -376,6 +153,13 @@
     <script src="assets/projects/hifpt/content.js"></script>
     <script src="assets/projects/shimauma/content.js"></script>
     <script src="assets/projects/kaka/content.js"></script>
+
+    <!-- Section Content (Loaded as scripts to avoid CORS issues locally) -->
+    <script src="assets/contents/about/content.js"></script>
+    <script src="assets/contents/experience/content.js"></script>
+    <script src="assets/contents/skills/content.js"></script>
+    <script src="assets/contents/education/content.js"></script>
+    <script src="assets/contents/contact/content.js"></script>
 
     <!-- Main Script -->
     <script src="script.js"></script>

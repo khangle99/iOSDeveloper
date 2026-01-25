@@ -65,6 +65,125 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.querySelector('.nav-btn.next');
     const prevBtn = document.querySelector('.nav-btn.prev');
 
+    // --- Dynamic Content Rendering ---
+
+    // Render About Section
+    const renderAbout = () => {
+        const container = document.getElementById('about-content');
+        const data = window.aboutContent;
+        if (!container || !data) return;
+
+        const statsHtml = data.stats.map(stat => `
+            <div class="stat-item">
+                <span class="stat-number">${stat.number}</span>
+                <span class="stat-label">${stat.label}</span>
+            </div>
+        `).join('');
+
+        container.innerHTML = `
+            <div class="about-card">
+                <h3>${data.summary.title}</h3>
+                <p>${data.summary.text}</p>
+            </div>
+            <div class="stats-grid">
+                ${statsHtml}
+            </div>
+        `;
+    };
+
+    // Render Experience Section
+    const renderExperience = () => {
+        const container = document.getElementById('experience-timeline');
+        const data = window.experienceContent;
+        if (!container || !data) return;
+
+        container.innerHTML = data.items.map(item => `
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">${item.period}</div>
+                <div class="timeline-content">
+                    <div class="company-header">
+                        <img src="${item.logo}" alt="${item.company} Logo" class="company-logo">
+                        <h3>${item.role}</h3>
+                    </div>
+                    <h4>${item.company}, ${item.location}</h4>
+                    <ul>
+                        ${item.details.map(detail => `<li>${detail}</li>`).join('')}
+                    </ul>
+                    <div class="tech-stack">
+                        ${item.techStack.map(tech => `<span>${tech}</span>`).join('')}
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    };
+
+    // Render Skills Section
+    const renderSkills = () => {
+        const container = document.getElementById('skills-grid');
+        const data = window.skillsContent;
+        if (!container || !data) return;
+
+        container.innerHTML = data.categories.map(category => `
+            <div class="skill-category">
+                <h3>${category.title}</h3>
+                <div class="skill-tags">
+                    ${category.skills.map(skill => `
+                        <span class="skill-tag ${skill.filled ? 'filled' : ''}">${skill.name}</span>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    };
+
+    // Render Education Section
+    const renderEducation = () => {
+        const container = document.getElementById('education-grid');
+        const data = window.educationContent;
+        if (!container || !data) return;
+
+        container.innerHTML = data.items.map(item => `
+            <div class="education-card">
+                <i class="${item.icon} edu-icon"></i>
+                <div class="edu-details">
+                    <h3>${item.title}</h3>
+                    <h4>${item.subtitle}</h4>
+                    ${item.year ? `<p class="edu-year">${item.year}</p>` : ''}
+                </div>
+            </div>
+        `).join('');
+    };
+
+    // Render Contact Section
+    const renderContact = () => {
+        const container = document.getElementById('contact-content');
+        const data = window.contactContent;
+        if (!container || !data) return;
+
+        const linksHtml = data.links.map(link => `
+            <a href="${link.url}" ${link.type === 'linkedin' ? 'target="_blank"' : ''} class="contact-link">
+                <i class="${link.icon}"></i>
+                <span>${link.text}</span>
+            </a>
+        `).join('');
+
+        container.innerHTML = `
+            <p>${data.description}</p>
+            <div class="contact-info">
+                ${linksHtml}
+            </div>
+        `;
+    };
+
+    // Initial Render Calls
+    renderAbout();
+    renderExperience();
+    renderSkills();
+    renderEducation();
+    renderContact();
+
+    // --- Projects Carousel Logic (Previously Implemented) ---
+
     // Projects Data Config
     const projectIds = ['gotyme', 'wifiesta', 'hifpt', 'shimauma', 'kaka'];
 
