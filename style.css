@@ -146,6 +146,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -154,6 +155,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
 }
 
 .container {
@@ -191,8 +193,9 @@ ul {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
-    /* Fallback */
 }
 
 .section {
@@ -923,7 +926,12 @@ ul {
     }
 
     .hero-text h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+
+    .hero-image .profile-img-container {
+        width: 280px;
+        height: 280px;
     }
 
     .hero-text p {
