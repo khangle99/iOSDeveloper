@@ -23,6 +23,10 @@
 </head>
 
 <body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -39,37 +43,15 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="btn-download" download>Download CV</a></li>
+                <li><a href="#" id="download-cv" class="btn-download" download>Download CV</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <span class="badge">iOS Developer</span>
-                <h1>Hello, I'm <br><span class="highlight">Le Duy Khang</span></h1>
-                <p>Passionate about building high-performance native apps using Swift. Experienced in developing
-                    scalable, maintainable code with clean architecture.</p>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                    <a href="#experience" class="btn btn-secondary">View Work</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/khangle2299" target="_blank" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="mailto:dev.khangle@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:+84936998493" aria-label="Phone"><i class="fas fa-phone"></i></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="blob"></div>
-                <!-- Placeholder for profile image, using a gradient generic avatar for now -->
-                <div class="profile-img-container">
-                    <i class="fas fa-user-astronaut"></i>
-                </div>
-            </div>
+        <div class="container hero-content" id="hero-container">
+            <!-- Loaded dynamically -->
         </div>
     </section>
 
@@ -101,7 +83,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div id="experience" class="container">
             <h2 class="section-title">Work Experience</h2>
             <div id="experience-timeline" class="timeline">
                 <!-- Loaded dynamically -->
@@ -155,6 +137,7 @@
     <script src="assets/projects/kaka/content.js"></script>
 
     <!-- Section Content (Loaded as scripts to avoid CORS issues locally) -->
+    <script src="assets/contents/hero/content.js"></script>
     <script src="assets/contents/about/content.js"></script>
     <script src="assets/contents/experience/content.js"></script>
     <script src="assets/contents/skills/content.js"></script>

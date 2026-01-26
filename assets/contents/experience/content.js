@@ -3,7 +3,7 @@ window.experienceContent = {
     items: [
         {
             period: "Jan 2026 – Present",
-            logo: "assets/contents/experience/images/tyme.svg",
+            logo: "assets/contents/experience/images/tyme.png",
             company: "TymeX",
             role: "iOS Developer",
             location: "Ho Chi Minh City, Vietnam (English)",
@@ -16,7 +16,7 @@ window.experienceContent = {
         },
         {
             period: "Jan 2025 – Dec 2025",
-            logo: "assets/contents/experience/images/wifiesta.svg",
+            logo: "assets/contents/experience/images/wifiesta.png",
             company: "WiFiesta",
             role: "iOS Developer",
             location: "Remote (English)",
@@ -57,7 +57,7 @@ window.experienceContent = {
         },
         {
             period: "Aug 2021 – Aug 2022",
-            logo: "assets/contents/experience/images/gumi.svg",
+            logo: "assets/contents/experience/images/gumi.png",
             company: "Gumi Viet Nam",
             role: "iOS Developer (Fresher)",
             location: "Ho Chi Minh City, Vietnam (Vietnamese)",

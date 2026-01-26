@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 812">
-  <rect width="375" height="812" fill="#2d333b" />
-  <rect x="20" y="60" width="335" height="150" rx="10" fill="#238636" opacity="0.2"/>
-  <text x="187.5" y="300" font-family="Arial, sans-serif" font-size="35" font-weight="bold" fill="#f0f6fc" text-anchor="middle">GoTyme Bank</text>
-  <circle cx="187.5" cy="400" r="80" stroke="#238636" stroke-width="5" fill="none"/>
-  <text x="187.5" y="415" font-family="Arial, sans-serif" font-size="24" fill="#238636" text-anchor="middle">$10,000</text>
-</svg>

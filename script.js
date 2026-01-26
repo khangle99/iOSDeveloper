@@ -1,9 +1,68 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // --- Theme Toggle Logic ---
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn.querySelector('i');
+
+    // Check local storage or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const applyTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        updateIcon(theme);
+    };
+
+    const updateIcon = (theme) => {
+        // Semantic Icon: If current theme is Dark, show Sun (to switch to Light).
+        // If current theme is Light, show Moon (to switch to Dark).
+        if (theme === 'dark') {
+            themeIcon.className = 'fas fa-sun';
+        } else {
+            themeIcon.className = 'fas fa-moon';
+        }
+    };
+
+    // Initial load
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else {
+        // Default to system
+        // If system is dark -> we are in dark mode -> show Sun icon
+        // If system is light -> we are in light mode -> show Moon icon
+        updateIcon(systemPrefersDark ? 'dark' : 'light');
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            let newTheme;
+
+            // Determine current effective theme
+            let isDark = false;
+            if (currentTheme) {
+                isDark = currentTheme === 'dark';
+            } else {
+                isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            }
+
+            // Toggle
+            newTheme = isDark ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+    }
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            if (this.classList.contains('btn-download')) return;
+
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth'
@@ -175,7 +234,57 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     };
 
+    // Render Hero Section
+    const renderHero = () => {
+        const container = document.getElementById('hero-container');
+        const data = window.heroContent;
+        if (!data) return;
+
+        // Update Download CV link in Navbar
+        const downloadBtn = document.getElementById('download-cv');
+        if (downloadBtn && data.cvPath) {
+            downloadBtn.href = data.cvPath;
+        }
+
+        if (!container) return;
+
+        const buttonsHtml = data.buttons.map(btn => `
+            <a href="${btn.link}" class="${btn.class}">${btn.label}</a>
+        `).join('');
+
+        const socialLinksHtml = data.socialLinks.map(link => `
+            <a href="${link.link}" ${link.label === 'LinkedIn' ? 'target="_blank"' : ''} aria-label="${link.label}">
+                <i class="${link.icon}"></i>
+            </a>
+        `).join('');
+
+        const profileContent = data.profileImage
+            ? `<img src="${data.profileImage}" alt="Profile">`
+            : `<i class="${data.profileIcon}"></i>`;
+
+        container.innerHTML = `
+            <div class="hero-text">
+                <span class="badge">${data.badge}</span>
+                <h1>${data.title}</h1>
+                <p>${data.description}</p>
+                <div class="hero-btns">
+                    ${buttonsHtml}
+                </div>
+                <div class="social-links">
+                    ${socialLinksHtml}
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="blob"></div>
+                <div class="profile-img-container">
+                    ${profileContent}
+                </div>
+            </div>
+        `;
+    };
+
     // Initial Render Calls
+    renderHero();
     renderAbout();
     renderExperience();
     renderSkills();
@@ -233,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="project-info">
                     <div class="project-header">
                         <div class="project-title-group">
-                            <img src="assets/projects/${project.id}/icon.svg" alt="${project.title} Icon" class="project-icon">
+                            <img src="assets/projects/${project.id}/icon.png" alt="${project.title} Icon" class="project-icon">
                             <h3>${project.title}</h3>
                         </div>
                         ${ratingHtml}
@@ -246,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${actionButtonHtml}
                 </div>
                 <div class="project-image">
-                    <img src="assets/projects/${project.id}/image.svg" alt="${project.title} App">
+                    <img src="assets/projects/${project.id}/screenshot.png" alt="${project.title} App">
                 </div>
             </div>
         `;

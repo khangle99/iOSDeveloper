@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 812">
-  <rect width="375" height="812" fill="#2d333b" />
-  <circle cx="187.5" cy="300" r="100" fill="#58a6ff" opacity="0.2"/>
-  <circle cx="187.5" cy="300" r="70" fill="#58a6ff" opacity="0.4"/>
-  <circle cx="187.5" cy="300" r="40" fill="#58a6ff"/>
-  <text x="187.5" y="500" font-family="Arial, sans-serif" font-size="35" font-weight="bold" fill="#f0f6fc" text-anchor="middle">WiFiesta</text>
-  <text x="187.5" y="540" font-family="Arial, sans-serif" font-size="18" fill="#8b949e" text-anchor="middle">Find Hotspots Near You</text>
-</svg>
