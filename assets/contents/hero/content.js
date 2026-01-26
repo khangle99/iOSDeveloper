@@ -4,7 +4,7 @@ window.heroContent = {
     description: "Passionate about building high-performance native apps using Swift. Experienced in developing scalable, maintainable code with clean architecture.",
     profileImage: "assets/contents/hero/profile.jpeg", // Path to profile image, e.g., "assets/profile.jpeg"
     profileIcon: "fas fa-user-astronaut", // FontAwesome icon fallback
-    cvPath: "assets/contents/cv/LeDuyKhang_iOSDeveloper.pdf", // Path to your CV PDF
+    cvPath: "https://drive.google.com/file/d/1B3X4PiJhFa1c_9acVeuijY2FZutzSQwB/view?usp=drive_link", // Google Drive link
     buttons: [
         {
             label: "Get in Touch",

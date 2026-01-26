@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateIcon = (theme) => {
-        // Semantic Icon: If current theme is Dark, show Sun (to switch to Light).
-        // If current theme is Light, show Moon (to switch to Dark).
         if (theme === 'dark') {
             themeIcon.className = 'fas fa-sun';
         } else {
@@ -24,15 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Initial load
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else {
-        // Default to system
-        // If system is dark -> we are in dark mode -> show Sun icon
-        // If system is light -> we are in light mode -> show Moon icon
-        updateIcon(systemPrefersDark ? 'dark' : 'light');
-    }
+    // Initial icon state based on theme set in head
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    updateIcon(currentTheme);
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
