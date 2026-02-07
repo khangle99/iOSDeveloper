@@ -6,7 +6,6 @@ window.aboutContent = {
     },
     stats: [
         { number: "5+", label: "Years Experience" },
-        { number: "5+", label: "Key Projects" },
-        { number: "815", label: "TOEIC Score" }
+        { number: "5+", label: "Key Projects" }
     ]
 };
